@@ -1,18 +1,12 @@
 import admin.*;
-import mediaDB.*;
+import mediaDB.Content;
+import mediaDB.Uploader;
+import mediaDB.implementations.UploaderImpl;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.ArrayList;
 
 public class AdminTests {
 
 
-
-    @Test
-    public void goodCreate() {
-        Admin admin = new AdminImpl();
-
-        admin.createFile();
-
-    }
 }
