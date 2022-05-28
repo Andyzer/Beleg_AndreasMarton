@@ -13,16 +13,16 @@ import java.util.UUID;
 
 public class AudioVideoImpl implements AudioVideo {
 
-    String uploader;
-    int accessCount;
-    int samplingRate;
-    int resolution;
-    BigDecimal bitrate;
-    Duration length;
-    UUID address;
-    Date uploadDate;
-    BigDecimal size;
-    Collection<Tag> tags;
+    private final String uploader;
+    private final long accessCount;
+    private final BigDecimal bitrate;
+    private final Duration length;
+    private final UUID address;
+    private final Date uploadDate;
+    private final BigDecimal size;
+    private Collection<Tag> tags;
+    public int samplingRate;
+    public int resolution;
 
     public AudioVideoImpl(String uploader, BigDecimal bitrate, BigDecimal size, Duration length, int resolution) {
         this.uploader = uploader;
@@ -35,6 +35,7 @@ public class AudioVideoImpl implements AudioVideo {
 
         this.address = UUID.randomUUID();
         this.samplingRate = getSamplingRate();
+        this.accessCount = 0;
     }
 
     @Override

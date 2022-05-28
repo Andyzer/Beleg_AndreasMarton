@@ -2,7 +2,6 @@ import admin.Admin;
 import simulation1.RandomDeleter;
 import simulation1.RandomUploader;
 
-import java.util.Random;
 
 public class Simulation1 {
     public static void main(String[] args) {

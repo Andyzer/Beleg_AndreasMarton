@@ -13,15 +13,15 @@ import java.util.UUID;
 
 public class AudioImpl implements Audio {
 
-    String uploader;
-    int accessCount;
-    int samplingRate;
-    BigDecimal bitrate;
-    Duration length;
-    UUID address;
-    Date uploadDate;
-    BigDecimal size;
-    Collection<Tag> tags;
+    private final String uploader;
+    private final long accessCount;
+    private final int samplingRate;
+    private final BigDecimal bitrate;
+    private final Duration length;
+    private final UUID address;
+    private final Date uploadDate;
+    private final BigDecimal size;
+    private Collection<Tag> tags;
 
     /**
      * Implementation for adding a new Audio file
@@ -42,7 +42,7 @@ public class AudioImpl implements Audio {
 
         this.address = UUID.randomUUID();
         this.samplingRate = bitrate.intValue() * size.intValue() / 100;
-
+        this.accessCount = 0;
     }
 
     @Override

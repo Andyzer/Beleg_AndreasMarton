@@ -17,11 +17,11 @@ public class UploadableImpl implements Uploadable {
 
     @Override
     public String getUploader() {
-        return uploader;
+        return this.uploader;
     }
 
     @Override
     public Date getUploadDate() {
-        return null;
+        return this.uploadDate;
     }
 }

@@ -12,16 +12,16 @@ import java.util.UUID;
 
 public class LicensedVideoImpl implements LicensedVideo {
 
-    String uploader;
-    String holder;
-    int accessCount;
-    BigDecimal bitrate;
-    Duration length;
-    UUID address;
-    Date uploadDate;
-    BigDecimal size;
-    Collection<Tag> tags;
-    int resolution;
+    private final String uploader;
+    private final String holder;
+    private final int accessCount;
+    private final BigDecimal bitrate;
+    private final Duration length;
+    private final UUID address;
+    private final Date uploadDate;
+    private final BigDecimal size;
+    private Collection<Tag> tags;
+    public int resolution;
 
     public LicensedVideoImpl(String uploader, String holder, BigDecimal bitrate, BigDecimal size, Duration length, int resolution) {
         this.uploader = uploader;

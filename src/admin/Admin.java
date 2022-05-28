@@ -11,8 +11,12 @@ public class Admin {
     private final ArrayList<Uploader> uploaderList = new ArrayList<>();
     private final Collection<Tag> tagCollection = new ArrayList<>();
 
-//TODO: Make a fucking thing that works, Create File Methods
-
+    /**
+     * A method to add all different types of Content
+     * Checks if the Content name? already exists or if it's a null
+     * @param newContent to be added
+     * @return true if it worked, false if it didn't
+     */
     public synchronized boolean createNewFile(Content newContent) {
         if (newContent == null) {
             return false;
@@ -25,7 +29,12 @@ public class Admin {
         return true;
     }
 
-
+    /**
+     * Method to create a new Uploader.
+     * Checks if Uploader is already present or if the Uploader to be added == null
+     * @param newUploader Uploader name to be added
+     * @return true if it worked, false if it didn't
+     */
 
     public boolean createNewUploader(Uploader newUploader) {
         if (newUploader == null) {
@@ -39,27 +48,26 @@ public class Admin {
         return true;
     }
 
-
     /**
-     * last 3 methods to be edited and better implemented
-     * TODO: read method
-     * TODO: update method
-     * TODO: delete method
-     */
-
-
-    /**
-     * @return should print out all the files available
+     * @return prints out all existent Files
      * I'm sure it will, given time
      */
-    public synchronized ArrayList<Content> showAllFiles() { return this.contentList; }
+    public synchronized ArrayList<Content> showAllFiles() {
+        return this.contentList;
+    }
 
-    public synchronized ArrayList<Uploader> showAllUploader() { return this.uploaderList; }
+    /**
+     * @return prints out all existent Uploaders
+     */
+    public synchronized ArrayList<Uploader> showAllUploader() {
+        return this.uploaderList;
+    }
 
     /**
      * @param file which AccessCounter should be increased
      */
     public void updateAccessCounter(Content file) {
+        file.getAccessCount();
         return void;
     }
 
@@ -71,9 +79,20 @@ public class Admin {
         return this.contentList.remove(file);
     }
 
-    public synchronized boolean deleteProducer(Uploader uploader) { return this.uploaderList.remove(uploader); }
+    /**
+     * @param uploader
+     * @return
+     */
+    public synchronized boolean deleteProducer(Uploader uploader) {
+        return this.uploaderList.remove(uploader);
+    }
 
-    public synchronized Collection<Tag> showAllTags() { return this.tagCollection; }
+    /**
+     * @return
+     */
+    public synchronized Collection<Tag> showAllTags() {
+        return this.tagCollection;
+    }
 
 
 }

@@ -14,15 +14,15 @@ import java.util.UUID;
 public class VideoImpl implements Video {
 
 
-    String uploader;
-    int accessCount;
-    BigDecimal bitrate;
-    Duration length;
-    UUID address;
-    Date uploadDate;
-    BigDecimal size;
-    Collection<Tag> tags;
-    int resolution;
+    private final String uploader;
+    private final int accessCount;
+    private final BigDecimal bitrate;
+    private final Duration length;
+    private final UUID address;
+    private final Date uploadDate;
+    private final BigDecimal size;
+    private Collection<Tag> tags;
+    public int resolution;
 
     public VideoImpl(String uploader, BigDecimal bitrate, BigDecimal size, int resolution, Duration length) {
 
@@ -35,6 +35,7 @@ public class VideoImpl implements Video {
 
         this.address = UUID.randomUUID();
         this.resolution = this.resolution;
+        this.accessCount = 0;
 
     }
 
